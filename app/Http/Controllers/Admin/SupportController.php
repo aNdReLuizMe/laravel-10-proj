@@ -19,4 +19,11 @@ class SupportController extends Controller
     {
         return view('admin/supports/create');
     }
+
+    public function store(Request $request)
+    {
+//        return view('admin/supports/store');
+        dd($request->all());
+    }
+
 }

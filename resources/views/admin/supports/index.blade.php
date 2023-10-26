@@ -1,6 +1,8 @@
 <h1>Listagem</h1>
 <p>Listagem suportes</p>
 
+<a href="{{route('supports.create')}}">Criar dúvida</a>
+
 <table>
     <thead>
     <th>assuntos</th>
