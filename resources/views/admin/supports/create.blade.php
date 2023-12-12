@@ -1,9 +1,13 @@
-<h1>Nova dúvida!</h1>
+@extends('admin.layouts.app')
 
-<form action="{{route('supports.store')}}" method="POST">
-{{--    <input type="hidden" value="{{csrf_token()}}" name="_token">--}}
-    @csrf()
-    <input type="text" placeholder="Assunto" name="subject">
-    <textarea  name="body" cols="30" rows="5" placeholder="Descrição"></textarea>
-    <button type="submit">Enviar</button>
+@section('title', 'Criar Novo Tópico')
+
+@section('header')
+<h1 class="text-lg text-black-500">Nova Dúvida</h1>
+@endsection
+
+@section('content')
+<form action="{{ route('supports.store') }}" method="POST">
+    @include('admin.supports.partials.form')
 </form>
+@endsection

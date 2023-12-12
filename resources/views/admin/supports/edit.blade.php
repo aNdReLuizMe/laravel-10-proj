@@ -1,8 +1,17 @@
-<h1>Dúvida {{ $support->id }}</h1>
+@extends('admin.layouts.app')
 
-<form action="{{route('supports.store')}}" method="POST">
-    @csrf()
-    <input type="text" placeholder="Assunto" name="subject" value=" {{ $support->subject }}">
-    <textarea  name="body" cols="30" rows="5" placeholder="Descrição">{{ $support->body }}</textarea>
-    <button type="submit">Editar</button>
+@section('title', "Editar a Dúvida {$support->subject}")
+
+@section('header')
+<h1 class="text-lg text-black-500">Dúvida {{ $support->subject }}</h1>
+@endsection
+
+@section('content')
+<form action="{{ route('supports.update', $support->id) }}" method="POST">
+    @method('PUT')
+    @include('admin.supports.partials.form', [
+        'support' => $support
+    ])
 </form>
+@endsection
+
