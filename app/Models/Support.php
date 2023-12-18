@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Support extends Model
 {
@@ -28,7 +27,7 @@ class Support extends Model
     public function status(): Attribute
     {
         return Attribute::make(
-            set: fn (SupportStatus $status) => $status->name,
+            set: fn(SupportStatus $status) => $status->name,
         );
     }
 
